@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
 
 class App extends Component {
   constructor(props) {
@@ -8,14 +6,20 @@ class App extends Component {
 
     console.log("constructor")
     this.state = {
-      name: ""
+      value: ""
     }
+      this.handleclick = this.handleclick.bind(this)
+    
   }
   
     componentWillMount(){
       console.log("did mount")
       
       
+    }
+
+    handleclick(e){
+    this.setState = ({value: e.target.value})
     }
   
   render() {
@@ -24,11 +28,12 @@ class App extends Component {
     console.log("render")
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <input type="text"/>
-          <h1></h1>
-        </header>
+          <label>
+            name
+          <input type="text" value = {this.state.value} onChange = {this.handleclick} name = "name"/>
+
+          <h1 ></h1>
+          </label>
       </div>
     );
   }
