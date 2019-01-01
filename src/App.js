@@ -24,15 +24,15 @@ class App extends Component {
   
   render() {
 
-    var name =  this.state.name
+
     console.log("render")
     return (
       <div className="App">
           <label>
             name
-          <input type="text" value = {this.state.value} onChange = {this.handleclick} name = "name"/>
+          <input type="text" value = {this.state.value} onChange = {this.handleclick}  />
 
-          <h1 ></h1>
+          <h1 value = {this.state.value}></h1>
           </label>
       </div>
     );
