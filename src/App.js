@@ -8,18 +8,13 @@ class App extends Component {
     this.state = {
       value: ""
     }
-      this.handleclick = this.handleclick.bind(this)
+      this.handlchange = this.handlechange.bind(this)
     
   }
   
-    componentWillMount(){
-      console.log("did mount")
-      
-      
-    }
 
-    handleclick(e){
-    this.setState = ({value: e.target.value})
+    handlechange(e){
+    this.setState({value: e.target.value})
     }
   
   render() {
@@ -30,7 +25,7 @@ class App extends Component {
       <div className="App">
           <label>
             name
-          <input type="text" value = {this.state.value} onChange = {this.handleclick}  />
+          <input type="text" value = {this.state.value} onChange = {this.handlechange}  />
 
           <h1 value = {this.state.value}></h1>
           </label>
