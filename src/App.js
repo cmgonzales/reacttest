@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 
-var x = ''
-var value = ""
+
 
 class App extends Component {
   constructor(props) {
     super(props)
 
     console.log("constructor")
-  
+
     this.state = {
       value: "",
-      name: ""
+      name: "",
+      result: ""
     }
     this.handlechange = this.handlechange.bind(this)
     this.random = this.random.bind(this)
@@ -24,21 +24,20 @@ class App extends Component {
 
   }
 
- random(){
+  random() 
+  {
+ var  x = Math.floor((Math.random() * 10) + 1)
 
-    x = Math.floor((Math.random() * 10) + 1)
-
-   this.setState({
-     name: x
-   })
-
- if (x == value){
-
-
-  console.log("test")
- }
-  
-}
+    this.setState({
+      name: x
+    })
+    if (x === this.state.value) 
+    {
+      this.setState({
+          result: "You got it right"
+      })
+    }
+  }
 
   render() {
 
@@ -47,10 +46,10 @@ class App extends Component {
         <label>
           <h2>Please pick a number between 1 - 10</h2>
           <input type="number" value={this.state.value} onChange={this.handlechange} />
-          <button onClick = {this.random} >submit</button>
-
+          <button onClick={this.random} >submit</button>
           <h1>{this.state.value}</h1>
           <h2>{this.state.name}</h2>
+          <h1>{this.state.result}</h1>
         </label>
       </div>
     );
